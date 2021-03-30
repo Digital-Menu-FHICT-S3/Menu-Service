@@ -6,6 +6,7 @@ import com.onlinemenu.menuservice.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -23,8 +24,13 @@ public class CategoryService {
         return categoryRepository.findById(categoryId);
     }
 
-    public void deleteCategoryById(Long categoryId) { categoryRepository.deleteById(categoryId); }
+    public void deleteCategoryById(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
+    }
 
+    public List<Category> GetAllCategories() {
+        return categoryRepository.findAll();
+    }
 }
 
 

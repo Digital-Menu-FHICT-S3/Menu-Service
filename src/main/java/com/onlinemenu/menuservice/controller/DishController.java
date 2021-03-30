@@ -21,12 +21,12 @@ public class DishController {
         return dishService.saveDish(dish);
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/{id}")
     public Optional<Dish> findDishById(@PathVariable("id") Long dishId){
         return dishService.findDishById(dishId);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public void deleteDishById(@PathVariable("id") Long dishId){
         dishService.deleteDishById(dishId);
     }

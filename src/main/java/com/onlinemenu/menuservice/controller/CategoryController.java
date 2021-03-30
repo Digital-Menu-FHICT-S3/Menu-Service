@@ -5,6 +5,7 @@ import com.onlinemenu.menuservice.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,18 +20,23 @@ public class CategoryController {
         return categoryService.saveCategory(category);
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("{id}")
     public Optional<Category> findCategoryById(@PathVariable("id") Long categoryId){
         return categoryService.findCategoryById(categoryId);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/delete/{id}")
     public void deleteCategoryById(@PathVariable("id") Long categoryId){
         categoryService.deleteCategoryById(categoryId);
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "Hello from categories";
+    @GetMapping("/all")
+    public List<Category> getAllCategories(){
+        return categoryService.GetAllCategories();
+    }
+
+    @PutMapping("/update")
+    public Category updateCategory(@RequestBody Category category) {
+        return categoryService.saveCategory(category);
     }
 }
