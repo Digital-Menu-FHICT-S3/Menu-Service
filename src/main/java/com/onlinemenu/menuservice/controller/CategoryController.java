@@ -20,6 +20,11 @@ public class CategoryController {
         return categoryService.saveCategory(category);
     }
 
+    @PostMapping("/createCategories")
+    public List<Category> saveCategories(@RequestBody List<Category> categories){
+        return categoryService.saveCategories(categories);
+    }
+
     @GetMapping("{id}")
     public Optional<Category> findCategoryById(@PathVariable("id") Long categoryId){
         return categoryService.findCategoryById(categoryId);
