@@ -1,0 +1,30 @@
+package com.onlinemenu.menuservice.service;
+
+
+import com.onlinemenu.menuservice.entity.Category;
+import com.onlinemenu.menuservice.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+
+@Service
+public class CategoryService {
+
+    @Autowired
+    private CategoryRepository categoryRepository;
+
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
+    }
+
+    public Optional<Category> findCategoryById(Long categoryId) {
+        return categoryRepository.findById(categoryId);
+    }
+
+    public void deleteCategoryById(Long categoryId) { categoryRepository.deleteById(categoryId); }
+
+}
+
+
