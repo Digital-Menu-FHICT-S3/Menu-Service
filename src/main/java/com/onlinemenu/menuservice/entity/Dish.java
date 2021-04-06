@@ -18,4 +18,6 @@ public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long dishId;
+    public String dishName;
+    public int dishCost;
 }
