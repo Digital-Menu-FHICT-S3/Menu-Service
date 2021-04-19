@@ -32,7 +32,7 @@ public class CategoryService {
     public List<Category> GetAllCategories() {
         return categoryRepository.findAll();
     }
-    public Category getCategoryByName(String name) {return categoryRepository.findByCategoryName(name); }
+    public Category getCategoryByName(String name) {return categoryRepository.findByName(name); }
 }
 
 
