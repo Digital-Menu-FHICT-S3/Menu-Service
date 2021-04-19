@@ -1,8 +1,6 @@
 package com.onlinemenu.menuservice.controller;
 
-import com.onlinemenu.menuservice.entity.Category;
 import com.onlinemenu.menuservice.entity.Dish;
-import com.onlinemenu.menuservice.service.CategoryService;
 import com.onlinemenu.menuservice.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
