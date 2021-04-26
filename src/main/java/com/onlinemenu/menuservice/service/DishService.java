@@ -23,4 +23,8 @@ public class DishService {
     public void deleteDishById(Long dishId) { dishRepository.deleteById(dishId); }
 
     public Dish updateDish(Dish dish) { return dishRepository.save(dish);}
+
+    public List<Dish> findDishesByCategoryId(Long categoryId) {
+        return dishRepository.findByCategoryId(categoryId);
+    }
 }
