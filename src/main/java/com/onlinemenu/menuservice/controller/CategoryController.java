@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/menu/categories")
 public class CategoryController {
@@ -25,12 +25,12 @@ public class CategoryController {
     public List<Category> saveCategories(@RequestBody List<Category> categories){
         return categoryService.saveCategories(categories);
     }
-    @GetMapping("{name}")
+    @GetMapping("/name/{name}")
     public Category getCategoryByName(@PathVariable String name){
         return categoryService.getCategoryByName(name);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Category> findCategoryById(@PathVariable("id") Long categoryId){
         return categoryService.findCategoryById(categoryId);
     }
