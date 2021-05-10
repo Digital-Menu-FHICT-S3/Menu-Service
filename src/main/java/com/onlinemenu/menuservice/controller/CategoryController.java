@@ -27,6 +27,7 @@ public class CategoryController {
     }
     @GetMapping("/name/{name}")
     public Category getCategoryByName(@PathVariable String name){
+
         return categoryService.getCategoryByName(name);
     }
 
