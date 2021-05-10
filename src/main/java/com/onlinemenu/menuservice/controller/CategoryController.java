@@ -18,7 +18,6 @@ public class CategoryController {
 
     @PostMapping("/create")
     public Category saveCategory(@RequestBody Category category){
-        Category category1 = new Category();
         return categoryService.saveCategory(category);
     }
 
@@ -28,6 +27,7 @@ public class CategoryController {
     }
     @GetMapping("/name/{name}")
     public Category getCategoryByName(@PathVariable String name){
+
         return categoryService.getCategoryByName(name);
     }
 

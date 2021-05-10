@@ -33,8 +33,10 @@ public class DishService {
         return dishRepository.findByCategoryId(categoryId);
     }
 
-//    public List<Dish> findDishesByCategoryName(String name) {
-//        Category category = new Category();
-//
-//    }
+    public List<Dish> findDishesByCategoryName(String name) {
+        Category category = restTemplate.getForObject("http://localhost:9191/menu/categories/name/" + name, Category.class);
+        System.out.println(category);
+        System.out.println("something");
+        return dishRepository.findByCategoryId(category.getCategoryId());
+    }
 }
