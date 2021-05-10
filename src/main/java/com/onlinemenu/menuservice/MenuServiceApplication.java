@@ -2,6 +2,8 @@ package com.onlinemenu.menuservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class MenuServiceApplication {
@@ -10,4 +12,8 @@ public class MenuServiceApplication {
 		SpringApplication.run(MenuServiceApplication.class, args);
 	}
 
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
 }

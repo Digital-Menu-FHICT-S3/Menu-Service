@@ -42,8 +42,10 @@ public class DishController {
         return dishService.updateDish(dish);
     }
 
-    @GetMapping("/category/{id}")
-    public List<Dish> findDishesByCategoryId(@PathVariable("id") Long categoryId){
-        return dishService.findDishesByCategoryId(categoryId);
+    @GetMapping("/category/{name}")
+    public List<Dish> findDishesByCategoryName(@PathVariable String name){
+        System.out.println("detected");
+        return dishService.findDishesByCategoryName(name);
     }
+
 }
