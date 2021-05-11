@@ -1,6 +1,5 @@
 package com.onlinemenu.menuservice.controller;
 
-import com.onlinemenu.menuservice.entity.Category;
 import com.onlinemenu.menuservice.entity.Dish;
 import com.onlinemenu.menuservice.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/menu/dishes")
 public class DishController {
@@ -44,7 +42,6 @@ public class DishController {
 
     @GetMapping("/category/{name}")
     public List<Dish> findDishesByCategoryName(@PathVariable String name){
-        System.out.println("detected");
         return dishService.findDishesByCategoryName(name);
     }
 
