@@ -21,6 +21,8 @@ public class DishService {
 
     public List<Dish> getAllDishes() {return dishRepository.findAll();}
 
+    public List<Dish> getAllDishesInShoppingCart(List<Long> dishIds) { return dishRepository.findAllById(dishIds); }
+
     public Dish saveDish(Dish dish) { return dishRepository.save(dish); }
 
     public Optional<Dish> findDishById(Long dishId) { return dishRepository.findById(dishId); }
