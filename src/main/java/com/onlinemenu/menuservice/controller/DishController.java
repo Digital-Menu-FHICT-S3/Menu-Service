@@ -20,6 +20,12 @@ public class DishController {
         return dishService.getAllDishes();
     }
 
+    @PostMapping("/all-in-shopping-cart")
+    public List<Dish> getAllDishesInShoppingCart(@RequestBody List<Long> dishIds)
+    {
+        return dishService.getAllDishesInShoppingCart(dishIds);
+    }
+
     @PostMapping("/create")
     public Dish saveDish(@RequestBody Dish dish) {
         return dishService.saveDish(dish);
