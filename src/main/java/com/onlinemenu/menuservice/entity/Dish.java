@@ -22,8 +22,8 @@ public class Dish {
 
     @Column(length=2000)
     private String description;
-    private boolean vegan;
-    private boolean lowSalt;
+//    private boolean vegan;
+//    private boolean lowSalt;
 
     @Column(length=2000)
     private String imageUrl;

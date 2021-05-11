@@ -15,7 +15,7 @@ public class DishController {
     @Autowired
     private DishService dishService;
 
-    @PostMapping("/all")
+    @GetMapping("/all")
     public List<Dish> dishes(@RequestBody Dish dish) {
         return dishService.getAllDishes();
     }
