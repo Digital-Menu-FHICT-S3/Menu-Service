@@ -20,7 +20,7 @@ public class DishController {
         return dishService.getAllDishes();
     }
 
-    @PostMapping("/all-in-shopping-cart")
+    @GetMapping("/all-in-shopping-cart")
     public List<Dish> getAllDishesInShoppingCart(@RequestBody List<Long> dishIds)
     {
         return dishService.getAllDishesInShoppingCart(dishIds);
@@ -36,7 +36,7 @@ public class DishController {
         return dishService.findDishById(dishId);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteDishById(@PathVariable("id") Long dishId) {
         dishService.deleteDishById(dishId);
     }
