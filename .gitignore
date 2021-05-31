@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 data/menu-service.mv.db
+data/menu-service.trace.db
