@@ -50,5 +50,4 @@ public class DishController {
     public List<Dish> findDishesByCategoryName(@PathVariable String name){
         return dishService.findDishesByCategoryName(name);
     }
-
 }
