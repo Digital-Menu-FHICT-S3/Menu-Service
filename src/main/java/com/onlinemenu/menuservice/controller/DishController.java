@@ -16,7 +16,7 @@ public class DishController {
     private DishService dishService;
 
     @GetMapping("/all")
-    public List<Dish> dishes(@RequestBody Dish dish) {
+    public List<Dish> dishes() {
         return dishService.getAllDishes();
     }
 
@@ -50,5 +50,4 @@ public class DishController {
     public List<Dish> findDishesByCategoryName(@PathVariable String name){
         return dishService.findDishesByCategoryName(name);
     }
-
 }
