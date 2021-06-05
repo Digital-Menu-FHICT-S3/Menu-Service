@@ -15,7 +15,9 @@ public class CategoryService {
 
     @Autowired
     private CategoryRepository categoryRepository;
-    public List<Category> saveCategories(List<Category> categories){ return categoryRepository.saveAll(categories);}
+    public List<Category> saveCategories(List<Category> categories){
+        return categoryRepository.saveAll(categories);
+    }
 
     public Category saveCategory(Category category) {
         return categoryRepository.save(category);
@@ -32,7 +34,10 @@ public class CategoryService {
     public List<Category> GetAllCategories() {
         return categoryRepository.findAll();
     }
-    public Category getCategoryByName(String name) {return categoryRepository.findByName(name); }
+
+    public Category getCategoryByName(String name) {
+        return categoryRepository.findByName(name);
+    }
 }
 
 

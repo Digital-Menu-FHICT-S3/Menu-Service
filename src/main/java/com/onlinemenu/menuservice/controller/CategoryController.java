@@ -20,16 +20,17 @@ public class CategoryController {
         return categoryService.saveCategory(category);
     }
 
-    @PostMapping("/createCategories")
+    @PostMapping("/create-categories")
     public List<Category> saveCategories(@RequestBody List<Category> categories){
         return categoryService.saveCategories(categories);
     }
+
     @GetMapping("/name/{name}")
     public Category getCategoryByName(@PathVariable String name){
-
         return categoryService.getCategoryByName(name);
     }
 
+    //Deze mapping kan het beste verandert worden naar /id/{id} wegens consistentie
     @GetMapping("/{id}")
     public Optional<Category> findCategoryById(@PathVariable("id") Long categoryId){
         return categoryService.findCategoryById(categoryId);
@@ -43,10 +44,5 @@ public class CategoryController {
     @GetMapping("/all")
     public List<Category> getAllCategories(){
         return categoryService.GetAllCategories();
-    }
-
-    @PutMapping("/update")
-    public Category updateCategory(@RequestBody Category category) {
-        return categoryService.saveCategory(category);
     }
 }
