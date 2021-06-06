@@ -76,7 +76,7 @@ public class DishControllerTest {
 
         String dishIdsAsString = mapper.writeValueAsString(dishIds);
 
-        mvc.perform(get("/menu/dishes/all-in-shopping-cart")
+        mvc.perform(post("/menu/dishes/all-in-shopping-cart")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(dishIdsAsString)
                 .accept(MediaType.APPLICATION_JSON))
