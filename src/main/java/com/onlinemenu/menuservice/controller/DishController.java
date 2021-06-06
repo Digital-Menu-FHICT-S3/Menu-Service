@@ -20,7 +20,7 @@ public class DishController {
         return dishService.getAllDishes();
     }
 
-    @GetMapping("/all-in-shopping-cart")
+    @PostMapping("/all-in-shopping-cart")
     public List<Dish> getAllDishesInShoppingCart(@RequestBody List<Long> dishIds)
     {
         return dishService.getAllDishesInShoppingCart(dishIds);
