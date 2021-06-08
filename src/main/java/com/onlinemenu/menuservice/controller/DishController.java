@@ -54,7 +54,7 @@ public class DishController {
         return dishService.findDishesByCategoryName(name);
     }
 
-    @GetMapping("/getavalible")
+    @GetMapping("/available")
     public List<Dish> getAvailableDishes() {
 
         List<Dish> firstDishList = dishService.getAllDishes();
