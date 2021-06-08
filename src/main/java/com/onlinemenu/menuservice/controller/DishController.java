@@ -4,6 +4,7 @@ import com.onlinemenu.menuservice.entity.Dish;
 import com.onlinemenu.menuservice.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/menu/dishes")
 public class DishController {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
     private DishService dishService;
@@ -21,8 +25,7 @@ public class DishController {
     }
 
     @PostMapping("/all-in-shopping-cart")
-    public List<Dish> getAllDishesInShoppingCart(@RequestBody List<Long> dishIds)
-    {
+    public List<Dish> getAllDishesInShoppingCart(@RequestBody List<Long> dishIds) {
         return dishService.getAllDishesInShoppingCart(dishIds);
     }
 
@@ -47,7 +50,20 @@ public class DishController {
     }
 
     @GetMapping("/category/{name}")
-    public List<Dish> findDishesByCategoryName(@PathVariable String name){
+    public List<Dish> findDishesByCategoryName(@PathVariable String name) {
         return dishService.findDishesByCategoryName(name);
+    }
+
+    @GetMapping("/getavalible")
+    public List<Dish> getAvailableDishes() {
+
+        List<Dish> firstDishList = dishService.getAllDishes();
+
+        List<Dish> availableDishes = firstDishList;//.stream().filter(dish -> {
+          //  dish.
+       // });
+
+        return availableDishes;
+
     }
 }
